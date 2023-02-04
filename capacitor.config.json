@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "coca cola",
+	"webDir": "dist",
+	"bundledWebRuntime": false
+}
