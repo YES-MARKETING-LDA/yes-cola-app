@@ -3,23 +3,7 @@
     <ion-content :fullscreen="true">
       <div class="slides">
         <ion-slides pager="true" :options="slideOpts">
-          <ion-slide v-for="(slide, idx) in posts" :key="idx" @click="router.push(`/post/${idx}`)">
-            <ion-card mode="ios">
-              <img :src="slide.image">
-              <ion-card-header>
-                <ion-card-title class="title">{{ slide.title }}</ion-card-title>
-              </ion-card-header>
-
-              <ion-card-content class="card-content">
-                <p style="margin-bottom: 1rem">00/00/0000</p>
-                <p style="margin-bottom: .6rem">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad assumenda beatae consequuntur cumque dolorem eligendi eos fugit, in iusto labore odio officia
-                  possimus rem saepe vel voluptate. Labore, voluptas.</p>
-                <p style="margin-bottom: .6rem">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad assumenda beatae consequuntur cumque dolorem eligendi eos fugit, in iusto labore odio officia
-                  possimus rem saepe vel voluptate. Labore, voluptas.</p>
-                <p style="margin-bottom: .6rem">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad assumenda beatae consequuntur cumque dolorem eligendi eos fugit, in iusto labore .</p>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
+          <NewsItem v-for="(slide, idx) in posts" :key="idx" :slide="slide" :index="idx"></NewsItem>
         </ion-slides>
       </div>
     </ion-content>
@@ -30,24 +14,12 @@
 .slides {
   padding: 1rem;
 }
-
-.slides .title {
-  font-size: 1.2rem;
-  text-align: left;
-}
-
-.slides .card-content {
-  min-height: 40vh;
-  text-align: left;
-  font-size: 1rem;
-  font-weight: 300;
-}
 </style>
 
 <script setup>
-import { IonPage, IonContent, IonSlides, IonSlide, IonCard, IonCardHeader, IonCardTitle, IonCardContent } from '@ionic/vue';
+import { IonPage, IonContent, IonSlides } from '@ionic/vue';
 import { reactive } from "vue";
-import router from "@/router";
+import NewsItem from "@/components/NewsItem.vue";
 
 const slideOpts = {
   initialSlide: 0,
