@@ -40,6 +40,14 @@ const routes: Array<RouteRecordRaw> = [
     {
         path: '/post/:id',
         component: () => import('@/views/PostPage.vue')
+    },
+    {
+        path: '/game',
+        component: () => import('@/views/GamePage.vue')
+    },
+    {
+        path: '/playGame',
+        component: () => import('@/views/PlayGame.vue')
     }
 ];
 
