@@ -42,7 +42,7 @@
     {
       title: 'Delivery Master',
       url: 'https://v6p9d9t4.ssl.hwcdn.net/html/7309862/index.html',
-      image: 'https://firebasestorage.googleapis.com/v0/b/yes4eutests.appspot.com/o/yes4gamification%2Fgames%2Fgame.jpg?alt=media&token=ca4cce8b-23b5-4278-81e0-65c3fe8a24ae'
+      image: process.env.BASE_URL + 'assets/Splash.png'
     },
   ]);
 
