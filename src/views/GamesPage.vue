@@ -41,7 +41,8 @@
   const games = reactive([
     {
       title: 'Delivery Master',
-      url: 'https://v6p9d9t4.ssl.hwcdn.net/html/7309862/index.html',
+      // url: 'https://v6p9d9t4.ssl.hwcdn.net/html/7309862/index.html',
+      url: process.env.BASE_URL + 'delivery-master/index.html',
       image: process.env.BASE_URL + 'assets/Splash.png'
     },
   ]);
